@@ -83,4 +83,8 @@ titleid=$(./hactool $basenca | grep -oP "(?<=Title ID:\s{27}).*")
 mkdir exefs romfs
 ./hactool --basenca="$basenca" $updatenca --romfsdir="romfs" --exefsdir="exefs"
 rm $basenca $updatenca
+cd ..
 
+mv temp/nsp/$titleid.nsp ./$titleid[patched].nsp
+
+rm -rf temp
